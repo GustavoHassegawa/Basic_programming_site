@@ -20,6 +20,12 @@ export default function NavBarTemplate() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <NavigationMenuLink asChild >
+                  <Link href="/fundamentos-computacao">Fundamentos</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <NavigationMenuTrigger>Comandos básicos</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul>

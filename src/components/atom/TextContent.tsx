@@ -6,7 +6,7 @@ interface TextContentProps {
 
 export function TextContent({children, className} : TextContentProps) {
     return (
-        <p className={`${className}`}>
+        <p className={`${className}`} style={{whiteSpace:"pre-line"}}>
             {children}
         </p>
     );
