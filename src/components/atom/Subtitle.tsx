@@ -7,7 +7,7 @@ interface SubtitleProps {
 
 export function Subtitle({children, className} : SubtitleProps) {
     return (
-        <p className={`${className}`}>
+        <p className={`${className}`} style={{whiteSpace:"pre-line"}}>
             {children}
         </p>
     );
