@@ -1,35 +1,57 @@
-import { CodePageTemplate } from "@/components/templates/CodePageTemplate";
+import { Block, CodePageTemplate } from "@/components/templates/CodePageTemplate";
 
-export default function DecisionsPage() {
-    const pageTitle = "Loops e Repetições";
-    const pageSubtitle = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dignissimos reprehenderit minus cupiditate. Qui est expedita commodi rerum necessitatibus beatae ipsum debitis placeat tempora. Nemo aspernatur ipsa laborum aliquid beatae.";
-    const codeTextCards = [
+export default function LoopPage() {
+    const pageTitle = "Repetições";
+    const pageSubtitle = "Às vezes, queremos que o computador repita uma tarefa muitas vezes — contar números, mostrar mensagens, somar valores de uma lista, verificar dados… Fazer isso linha por linha seria um pesadelo!\nAs estruturas de repetição existem justamente para isso: automatizar tarefas repetitivas e evitar código duplicado.\nCom comandos como for e while, você ensina o computador a repetir ações até uma condição ser atingida, economizando tempo e linhas de código.\n\nElas são o \"modo automático\" da programação — você explica o que fazer, e o computador cuida do resto.";
+    const whileCard = 
         {
             title: "while(condição)",
-            contentText: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias error blanditiis deleniti rem dignissimos in id quis labore eveniet. Ducimus voluptatum quaerat officia itaque aliquid mollitia architecto at! Velit, temporibus.",
+            contentText: "O while é usado quando você quer repetir algo, mas não sabe quantas vezes vai precisar repetir.\nEle continua enquanto uma condição for verdadeira.\nNeste exemplo, o programa roda enquanto o valor de contador for menor que 5.\nQuando chegar em 5, ele para.",
             contentCode: `
-while(valor < 10):
-    print(valor)
-    valor = valor + 1
-            `,
+contador = 0
+
+while contador < 5:
+    print("Contador:", contador)
+    contador += 1
+`,
             language: "python"
-        },
+        }
+    const forCard = 
         {
             title: "for(condição)",
-            contentText: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias error blanditiis deleniti rem dignissimos in id quis labore eveniet. Ducimus voluptatum quaerat officia itaque aliquid mollitia architecto at! Velit, temporibus.",
+            contentText: "O for é usado quando você quer repetir uma ação várias vezes, mas já sabe quantas vezes vai repetir.\nEle percorre uma sequência (como uma lista ou um intervalo de números).",
             contentCode: `
 for i in range(5):
-    print(i)
+    print("Repetição número:", i)
             `,
             language: "python"
         }
-    ]
+    
+    const cautionCard = {
+        title:"Cuidado com loops infinitos!",
+        text:"Se a condição nunca se tornar falsa, o programa nunca termina."
+    }
+
+    const blocksToSend: Block[] = [
+        {
+            cardType:"code",
+            data: whileCard
+        },
+        {
+            cardType:"code",
+            data: forCard
+        },
+        {
+            cardType:"text",
+            data: cautionCard
+        }
+    ] 
 
     return (
         <CodePageTemplate 
             pageTitle={pageTitle} 
             pageSubtitle={pageSubtitle}
-            codeCards={codeTextCards}
+            blocks={blocksToSend}
         />
     );
 }

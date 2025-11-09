@@ -17,14 +17,18 @@ interface CodeCardData {
     language?: string;
 }
 
+export type Block = 
+  | { cardType: "text"; data: TextCardData }
+  | { cardType: "code"; data: CodeCardData };
+
 interface CodePageTemplateProps {
     pageTitle: string;
     pageSubtitle?: string;
-    textCards?: TextCardData[];
-    codeCards?: CodeCardData[];
+    blocks?: Block[];
 }
 
-export function CodePageTemplate({ pageTitle, pageSubtitle, textCards, codeCards } : CodePageTemplateProps) {
+
+export function CodePageTemplate({ pageTitle, pageSubtitle, blocks } : CodePageTemplateProps) {
     
     return (
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] p-6 bg-background text-foreground">
@@ -33,31 +37,13 @@ export function CodePageTemplate({ pageTitle, pageSubtitle, textCards, codeCards
                 subtitle={pageSubtitle}
             />
             
-            {codeCards?.map((cardData, index) => (
-                <CodeTextCard 
-                    key={index}
-                    titleAs="h2"
-                    data={{
-                        title: cardData.title,
-                        subtitle: cardData.subtitle,
-                        contentText: cardData.contentText,
-                        contentCode: cardData.contentCode,
-                        language: cardData.language
-                    }}                                    
-                />
-            ))}
-
-            {textCards?.map((cardData, index) => (
-                <SimpleTextCard
-                    key={index}
-                    titleAs="h2"
-                    data={{
-                        title: cardData.title, 
-                        subtitle: cardData.subtitle,
-                        text: cardData.text
-                    }}
-                />
-            ))}
+            {blocks?.map((block, index) => {
+                if (block.cardType === "code") {
+                    return <CodeTextCard key={index} data={block.data} />;
+                } else {
+                    return <SimpleTextCard key={index} data={block.data} />;
+                }
+            })}
         </div>
     );
 }
