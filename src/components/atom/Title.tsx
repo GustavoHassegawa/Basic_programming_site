@@ -16,7 +16,7 @@ export function Title({ children, as: Component = 'h6', className}: TitleProps) 
     // else if (Component === 'h6') sizeClasses = 'text-base';
     
     return (
-        <Component className={`${className}`}>
+        <Component className={`${className}`} style={{whiteSpace:"pre-line"}}>
             {children}
         </Component>
     );
