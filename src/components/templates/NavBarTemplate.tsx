@@ -38,16 +38,16 @@ export default function NavBarTemplate() {
                           </div>
                         </Link>
                       </NavigationMenuLink>
-
-                      <NavigationMenuLink asChild>
-                        <Link href="/comandos/input">   
-                          <div className="font-medium">Input</div>
-                        </Link>
-                      </NavigationMenuLink>
                       
                       <NavigationMenuLink asChild>
                         <Link href="/comandos/print">
                           <div className="font-medium">Print</div>
+                        </Link>
+                      </NavigationMenuLink>
+
+                      <NavigationMenuLink asChild>
+                        <Link href="/comandos/input">   
+                          <div className="font-medium">Input</div>
                         </Link>
                       </NavigationMenuLink>
 
@@ -60,6 +60,12 @@ export default function NavBarTemplate() {
                       <NavigationMenuLink asChild>
                         <Link href="/comandos/repeticao-loop">
                           <div className="font-medium">Repetições & Loops</div>
+                        </Link>
+                      </NavigationMenuLink>
+
+                      <NavigationMenuLink asChild>
+                        <Link href="/comandos/funcao">   
+                          <div className="font-medium">Funções</div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
