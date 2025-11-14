@@ -46,6 +46,22 @@ print(numero)       #Mostra o valor de numero
         `
     }
 
+    const exerciseOneCard = {
+        title: "Exercício 1",
+        text: "Crie um programa que solicite ao usuário que digite seu curso. Em seguida, exiba a mensagem: O curso de [curso] é muito interessante!\n\nEntrada exemplo:\nEngenharia de Informação\nSaída:\nO curso de Engenharia de Informação é muito interessante!"
+    }
+
+    const exerciseTwoCard = {
+        title: "Exercício 2",
+        text: "Desenvolva um programa que solicite ao usuário dois números inteiros e exiba a soma deles.\n\nEntrada exemplo:\n10, 5\nSaída:\n15"
+    }
+
+    const exerciseThreeCard = {
+        title: "Exercício 3",
+        text: "Crie um programa que solicite o nome e idade do usuário separadamente e exiba:\n[Nome], você tem [Idade] anos e estuda na UFABC.\n\nEntrada exemplo:\nMaria, 20\nSaída:\nMaria, você tem 20 anos e estuda na UFABC."
+    }
+
+
     const blocksToSend: Block[] = [
         {
             cardType: "code",
@@ -62,7 +78,19 @@ print(numero)       #Mostra o valor de numero
         {
             cardType: "code",
             data: howToReadAnFloat
-        }
+        },
+        {
+            cardType:"text",
+            data: exerciseOneCard
+        },
+        {
+            cardType:"text",
+            data: exerciseTwoCard
+        },
+        {
+            cardType:"text",
+            data: exerciseThreeCard
+        },
     ]
 
     return (

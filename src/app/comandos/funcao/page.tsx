@@ -1,3 +1,4 @@
+import PythonRunnerComponent from "@/components/python/pythonRunnerComponent";
 import { Block, CodePageTemplate } from "@/components/templates/CodePageTemplate";
 
 export default function FunctionsPage() {
@@ -75,6 +76,22 @@ print("O resultado é:", soma)
         text: "O return transforma a função em algo independente e reaproveitável.\nEm vez de apenas executar uma ação, ela entrega um valor que pode ser usado em outras partes do código.\n'Isso deixa o programa modular, organizado e mais profissional — cada função faz sua parte, e o conjunto forma o programa completo."
     }
 
+    const exerciseOneCard = {
+        title: "Exercício Q5.1",
+        text: "Defina uma função saudacao_ufabc() que exibe 'Seja bem-vindo(a) à UFABC!'. Depois, chame a função.\n\nResultado esperado:\nSeja bem-vindo(a) à UFABC!"
+    }
+
+    const exerciseTwoCard = {
+        title: "Exercício Q5.2",
+        text: "Defina uma função dobro(numero) que retorna o dobro do número. Chame a função com 15.\n\nResultado esperado:\n30"
+    }
+
+    const exerciseThreeCard = {
+        title: "Exercício Q5.3",
+        text: "Defina uma função calcula_media(n1, n2) que retorna a média de duas notas. Chame a função com 8.0 e 7.0.\n\nResultado esperado:\n7.5"
+    }
+
+
     const blocksToSend: Block[] = [
         {
             cardType:"code",
@@ -108,13 +125,29 @@ print("O resultado é:", soma)
             cardType:"text",
             data: whyReturncard
         },
+        {
+            cardType:"text",
+            data: exerciseOneCard
+        },
+        {
+            cardType:"text",
+            data: exerciseTwoCard
+        },
+        {
+            cardType:"text",
+            data: exerciseThreeCard
+        },
     ] 
 
     return (
-        <CodePageTemplate 
-            pageTitle={pageTitle} 
-            pageSubtitle={pageSubtitle}
-            blocks={blocksToSend}
-        />
+        <main>
+            <CodePageTemplate 
+                pageTitle={pageTitle} 
+                pageSubtitle={pageSubtitle}
+                blocks={blocksToSend}
+            />
+
+            <PythonRunnerComponent />
+        </main>
     );
 }

@@ -7,7 +7,7 @@ import { PythonProvider } from "react-py";
 
 const PythonRunnerLogic: React.FC = () => {
     const {code, setCode, result, run, isLoading, isRunning } = usePythonExecutor(
-        "print('Olá, Python com TS!')"
+        "print('Olá, Mundo!')"
     );
 
     return (

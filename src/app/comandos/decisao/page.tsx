@@ -1,3 +1,4 @@
+import PythonRunnerComponent from "@/components/python/pythonRunnerComponent";
 import { Block, CodePageTemplate } from "@/components/templates/CodePageTemplate";
 
 export default function DecisionsPage() {
@@ -44,6 +45,24 @@ else:
             `,
             language: "python"
         }
+    
+    const exerciseOneCard = {
+        title: "Exercício 1",
+        text: "Solicite ao usuário que digite uma nota de 0 a 10. Se a nota for >= 7, exiba 'Aprovado!'. Caso contrário, exiba 'Recuperação'.\n\nEntrada: 8\nSaída:\nAprovado\n\nEntrada: 6.5\nSaída:\nRecuperação"
+    }
+
+    const exerciseTwoCard = {
+        title: "Exercício 2",
+        text: "Peça ao usuário um número inteiro e diga se ele é par ou ímpar.\n\nEntrada: 15\nSaída:\nO número é ímpar.\n\nEntrada: 24\nSaída:\nO número é par."
+    }
+
+    const exerciseThreeCard = {
+        title: "Exercício 3",
+        text: "Classifique o desempenho do aluno conforme a nota:\nMB (>= 8.5)\nB (>= 7.0 e < 8.5)\nR (>= 5.0 e < 7.0)\nI (< 5.0)\n\nEntrada: 9.2\nSaída: MB\nEntrada: 6.8\nSaída: R\nEntrada: 3.5\nSaída: I"
+    }
+
+
+    
 
     const blocksToSend: Block[] = [
         {
@@ -58,13 +77,29 @@ else:
             cardType:"code",
             data: elifCard
         },
+        {
+            cardType:"text",
+            data: exerciseOneCard
+        },
+        {
+            cardType:"text",
+            data: exerciseTwoCard
+        },
+        {
+            cardType:"text",
+            data: exerciseThreeCard
+        },
     ] 
 
     return (
-        <CodePageTemplate 
-            pageTitle={pageTitle} 
-            pageSubtitle={pageSubtitle}
-            blocks={blocksToSend}
-        />
+        <main>
+            <CodePageTemplate 
+                pageTitle={pageTitle} 
+                pageSubtitle={pageSubtitle}
+                blocks={blocksToSend}
+            />
+
+            <PythonRunnerComponent />
+        </main>
     );
 }

@@ -36,6 +36,8 @@ const CodeComponent: React.FC<CodeComponentProps> = ({
           <div className="mb-4">
             <label htmlFor="code-editor" className="text-sm font-medium leading-none">
               Escreva seu código Python aqui:
+              <br />
+              Obs: este simulador não suporta o comando input (pode colocar o valor da variável diretamente no código), é apenas uma forma rápida de testar um comando, recomendamos o uso de um google colab para isso!
             </label>
 
             <div>

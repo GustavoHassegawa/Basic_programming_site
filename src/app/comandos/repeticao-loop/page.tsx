@@ -1,3 +1,4 @@
+import PythonRunnerComponent from "@/components/python/pythonRunnerComponent";
 import { Block, CodePageTemplate } from "@/components/templates/CodePageTemplate";
 
 export default function LoopPage() {
@@ -32,6 +33,22 @@ for i in range(5):
         text:"Se a condição nunca se tornar falsa, o programa nunca termina."
     }
 
+    const exerciseOneCard = {
+        title: "Exercício 1",
+        text: "Utilizando o laço for, exiba todos os números inteiros de 1 a 5.\n\nResultado esperado:\n1\n2\n3\n4\n5"
+    }
+
+    const exerciseTwoCard = {
+        title: "Exercício 2",
+        text: "Utilize um laço while para solicitar repetidamente a senha 'ufabc2025'. Pare apenas quando a senha correta for digitada.\n\nEntrada: 123\nSaída:\nSenha incorreta. Tente novamente.\n\nEntrada: ufabc2025\nSaída:\nAcesso liberado!"
+    }
+
+    const exerciseThreeCard = {
+        title: "Exercício 3",
+        text: "Percorra a lista ['FUV', 'GA', 'FEMEC'] com um laço for e exiba:\nEstou matriculado em: X\n\nResultado esperado:\nEstou matriculado em: FUV\nEstou matriculado em: GA\nEstou matriculado em: FEMEC"
+    }
+
+
     const blocksToSend: Block[] = [
         {
             cardType:"code",
@@ -44,14 +61,30 @@ for i in range(5):
         {
             cardType:"text",
             data: cautionCard
-        }
+        },
+        {
+            cardType:"text",
+            data: exerciseOneCard
+        },
+        {
+            cardType:"text",
+            data: exerciseTwoCard
+        },
+        {
+            cardType:"text",
+            data: exerciseThreeCard
+        },
     ] 
 
     return (
-        <CodePageTemplate 
-            pageTitle={pageTitle} 
-            pageSubtitle={pageSubtitle}
-            blocks={blocksToSend}
-        />
+        <main>
+            <CodePageTemplate 
+                pageTitle={pageTitle} 
+                pageSubtitle={pageSubtitle}
+                blocks={blocksToSend}
+            />
+
+            <PythonRunnerComponent />
+        </main>
     );
 }
